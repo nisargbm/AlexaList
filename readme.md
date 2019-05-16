@@ -1,0 +1,1 @@
+# Alexa enabled food item list using DyanmoDB

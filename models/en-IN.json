@@ -1,0 +1,117 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "list mimi",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddItemIntent",
+                    "slots": [
+                        {
+                            "name": "ItemName",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "{ItemName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "add {ItemName}",
+                        "add"
+                    ]
+                },
+                {
+                    "name": "GetItemsIntent",
+                    "slots": [],
+                    "samples": [
+                        "get my items"
+                    ]
+                },
+                {
+                    "name": "RemoveItemIntent",
+                    "slots": [
+                        {
+                            "name": "ItemName",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "{ItemName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "remove {ItemName}",
+                        "remove"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "AddItemIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "ItemName",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.932310416052.1004645578092"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "RemoveItemIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "ItemName",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1034415917954.788060345760"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.932310416052.1004645578092",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which item would you like to add "
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1034415917954.788060345760",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which item would you like to remove "
+                    }
+                ]
+            }
+        ]
+    }
+}
